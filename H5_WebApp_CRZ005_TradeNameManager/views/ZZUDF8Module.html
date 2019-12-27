@@ -1,0 +1,35 @@
+<form name="submitForm"  novalidate>
+<div id="ZZUDF8Module">
+	<div class="panel {{theme.panel}}">
+		<div class="panel-heading h5-cursor-pointer"
+			ng-model="modelobject.collapseUIGrid1"
+			ng-mousedown="modelobject.collapseUIGrid1=!modelobject.collapseUIGrid1">
+			<img class="h5-icon" ng-src="img/selection-icon.png"
+				title="{{::languageConstants.get('Heading')}}" alt="" />{{::languageConstants.get('Trade Name
+			Manager ')}}
+		</div>
+		<tr input type="text" class="h5-input-xs" class="h5-color-graphite">
+			<h5>
+				{{::languageConstants.get('Trade Name')}} <input type="text"
+					class="h5-input-xs" ng-model="ZZUDF8Module.ZZUDF8Record.PK03"
+					name="PK03" title="Table Name" style=""
+					oninput="this.value = this.value.toUpperCase()" autofocus >
+				<button type="submit" class="h5Button {{theme.button}}"
+					ng-click="AppCtrl.openAddRecordwindow()">{{::languageConstants.get('Add
+					New ')}}</button>
+			</h5>
+		</tr>
+		<div class="pager h5-margin-auto"></div>
+		<div id="ZZUDF8ListGrid" ui-grid="ZZUDF8Module.ZZUDF8ListGrid"
+			ng-class="theme.h5Grid" class="h5Grid"
+			ng-if="!modelobject.collapseUIGrid1" ui-grid-selection
+			ui-grid-resize-columns ui-grid-move-columns ui-grid-auto-resize
+			ui-grid-cellNav ui-grid-exporter ui-grid-save-state ui-grid-pinning
+			ui-grid-edit></div>
+		<button class="h5Button {{theme.button}}"
+			ng-click="AppCtrl.closeWindow()">{{::languageConstants.get('Close')}}</button>
+		
+		<!-- ui-grid-edit to edit fields on the grid -->
+	</div>
+</div>
+</form>
